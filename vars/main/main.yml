@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+cloudcli_repos_create: "{{ _cloudcli_repos_create['all']
+  | union ( _cloudcli_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+cloudcli_repos_download: "{{ _cloudcli_repos_download['all']
+  | union ( _cloudcli_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+cloudcli_templates_copy: "{{ _cloudcli_templates_copy['all']
+  | union ( _cloudcli_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+cloudcli_services_enable: "{{ _cloudcli_services_enable['all']
+  | union ( _cloudcli_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+cloudcli_selinux_enable: "{{ _cloudcli_selinux_enable['all']
+  | union ( _cloudcli_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+cloudcli_packages_remove: "{{ _cloudcli_packages_remove['all']
+  | union ( _cloudcli_packages_remove[my_os]
+  | default([]) ) }}"
+cloudcli_packages_repos: "{{ _cloudcli_packages_repos['all']
+  | union ( _cloudcli_packages_repos[my_os]
+  | default([]) ) }}"
+cloudcli_packages_prereq: "{{ _cloudcli_packages_prereq['all']
+  | union ( _cloudcli_packages_prereq[my_os]
+  | default([]) ) }}"
+cloudcli_packages_install: "{{ _cloudcli_packages_install['all']
+  | union ( _cloudcli_packages_install[my_os]
+  | default([]) ) }}"

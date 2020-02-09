@@ -1,0 +1,10 @@
+---
+# Template configuration files for cloudcli
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ cloudcli_templates_copy }}"
+  when: cloudcli_copy_templates

@@ -1,0 +1,27 @@
+---
+# Install cloudcli packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ cloudcli_packages_remove }}"
+    state: absent
+  become: true
+  when: cloudcli_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ cloudcli_packages_repos }}"
+    state: "{{ cloudcli_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ cloudcli_packages_prereq }}"
+    state: "{{ cloudcli_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ cloudcli_packages_install }}"
+    state: "{{ cloudcli_packages_state }}"
+  become: true

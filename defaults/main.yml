@@ -1,0 +1,19 @@
+---
+# defaults file for cloudcli
+
+cloudcli_packages_state: present
+cloudcli_remove_packages: true
+cloudcli_enable_service: true
+cloudcli_enable_selinux: true
+cloudcli_copy_templates: true
+cloudcli_firewall_configure: true
+cloudcli_firewall_rules:
+  - service: ssh
+  - port: 3389
+cloudcli_users:
+  - user: devops
+    group: docker
+cloudcli_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true
