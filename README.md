@@ -8,10 +8,10 @@ cloudcli: Cloudcli
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.cloudcli](https://galaxy.ansible.com/devops-toolbox.cloudcli)
+[https://galaxy.ansible.com/devopstoolbox.cloudcli](https://galaxy.ansible.com/devopstoolbox.cloudcli)
 
 ```bash
-ansible-galaxy install devops-toolbox.cloudcli
+ansible-galaxy install devopstoolbox.cloudcli
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: cloudcli is configured
       import_role:
-        name: devops-toolbox.cloudcli
+        name: devopstoolbox.cloudcli
       vars:
         cloudcli_packages_state: present
         cloudcli_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
